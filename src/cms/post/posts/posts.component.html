@@ -1,0 +1,12 @@
+<br>
+<a [routerLink]="[{outlets: {primary: 'list'}}]">View all posts</a>
+<br>
+<a [routerLink]="[{outlets: {postsCreate: 'create'}}]">Let's make new post</a>
+<div class="row">
+    <div class="col-left">
+        <router-outlet name="primary"></router-outlet>
+    </div>
+    <div class="col-right">
+        <router-outlet name="postsCreate"></router-outlet>
+    </div>
+</div>

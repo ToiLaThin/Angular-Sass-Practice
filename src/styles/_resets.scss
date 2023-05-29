@@ -1,0 +1,83 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    font-size: 16px;
+    /*set 1 rem = 10px*/
+    font-family: Helvetica, Arial, sans-serif;
+    --clr-primary-light: #fff;
+    --clr-secodary-light: #F1F6F9;
+    --clr-primary-dark: #000;
+    --clr-secodary-dark: #394867;
+
+    --clr-shadow: #9BA4B5;
+    --clr-primary-blue: #3e8ed0;
+    --clr-primary-red: #f14668;
+    --clr-primary-green: #48c78e;
+
+    --bg-primary: #F1F6F9;
+    --bg-secondary: #394867;
+    --bg-shadow: var(--clr-primary-shadow);
+
+    --text-prime: var(--clr-primary-dark);
+    --text-primary-dark: var(--clr-primary-dark);
+    --text-primary-light: var(--clr-primary-light);
+}
+
+.light-theme {
+    --bg-primary: var(--clr-primary-light);
+    --bg-secondary: var(--clr-secondary-light)    
+    --text-prime: var(--clr-primary-dark);
+}
+
+.dark-theme {
+    --bg-primary: var(--clr-primary-dark);
+    --bg-secondary: var(--clr-secondary-dark)    
+    --text-prime: var(--clr-primary-light);
+}
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  
+body::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}

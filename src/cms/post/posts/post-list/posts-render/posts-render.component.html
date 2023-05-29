@@ -1,0 +1,13 @@
+<div class="card">
+    <img src="{{postToRender.image}}" alt="post image">
+    <div>
+        <span>
+            <h3 (click)="viewDetailOfPost(postToRender.id)">{{postToRender.title}}</h3>
+        </span>
+        <p>{{postToRender.content}}</p>
+    </div>
+    <div style="display: flex;">
+        <app-shared-pill-btn [label]="'Edit'" (clickEmitter)="navigateEditComponent(postToRender.id)"></app-shared-pill-btn>
+        <app-shared-pill-btn [label]="'Delete'" (clickEmitter)="deletePost()"></app-shared-pill-btn>
+    </div>
+</div>

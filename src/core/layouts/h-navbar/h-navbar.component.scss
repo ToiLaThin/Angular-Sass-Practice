@@ -1,0 +1,117 @@
+@import '/src/styles/mixins.scss';
+:host{
+    position: fixed;
+    top: 0;
+    background-color: var(--bg-primary);
+    min-width: 100%;
+}
+
+.showNavs {
+    height: auto !important;
+}
+.hnavbar {
+    @include flex {
+        flex-direction: row;
+        justify-content: space-between;
+    };
+    @include card;
+
+
+    .hnavbar-header {
+        @include flex {
+            flex-direction: row;
+            justify-content: space-between;
+        };
+
+        .logo {
+            height: 60px;
+            width: auto;
+            margin-top: 5px;
+            margin-left: 8px;
+        }
+
+        .hnavbar-options{
+            @include flex;
+            .hnavbar-tabs-toggler, .container{
+                display: none;
+            }
+        }
+
+    }
+
+    .hnavbar-tabs {
+        @include flex {
+            flex-direction: row;
+            justify-content: space-between;
+            
+            a {
+                display: block;
+                padding: 0 1.5rem;
+                color: var(--text-prime);
+                cursor: pointer;
+                @include zoom-hover {
+                    color: var(--clr-primary-red);
+                }
+
+                &:focus-within {
+                    color: var(--clr-primary-red);
+                }
+            }
+            
+        };
+    }
+}
+
+@include mobile-screen {
+    .hnavbar {
+        display: block; //
+        .container { //different from container of app-h-navbar-options in .hnavbar-options
+            display: none;
+        }
+        .hnavbar-header {
+            @include card;
+            @include flex {
+                flex-direction: row;
+                justify-content: space-between;
+            };
+
+            .hnavbar-options {
+                .hnavbar-tabs-toggler {
+                    display: block;
+                    font-size: 1.5rem;  
+                    padding: 0 1rem;
+                    cursor: pointer;
+                    @include zoom-hover {
+                        color: var(--clr-primary-red);
+                    }
+                }
+                .container {
+                    display: block;
+                }
+            }
+        }
+
+        .hnavbar-tabs {
+            overflow: hidden;
+            height: 0;
+            @include flex {
+                flex-direction: column;
+                justify-content: space-between;
+            };
+            overflow: hidden;
+            li {
+                width: 100%;
+            }
+            a {
+                text-align: center;
+                padding: 20px;
+                transition: translateX 0.2s ease-in-out;
+                &:hover { //override existing hover
+                    font-weight: bold;
+                    background-color: var(--clr-shadow);
+                    transform: translateX(-20px);
+                }            
+            }
+        }
+    }
+}

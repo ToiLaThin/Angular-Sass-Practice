@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let post of (this.posts$ | async)">
+        <app-posts-render [post]="post"></app-posts-render>
+    </li>
+</ul>

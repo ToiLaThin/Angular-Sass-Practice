@@ -1,0 +1,45 @@
+@mixin flex {
+    display: flex;
+    align-items: center;
+    @content;
+    //for flex-direction & justify-content
+}
+
+@mixin zoom-hover {
+    &:hover {
+        transform: scale(1.1);
+        transition: all 0.2s ease-in-out;
+        @content;
+    }
+}    
+
+@mixin card {
+    border-radius: 4px;
+    box-shadow: 0 0 10px var(--clr-shadow);
+}
+
+// animation
+// media query
+// @mixin
+// @content
+
+@mixin mobile-screen {
+    @media screen and (max-width: 576px) {
+        @content;
+    }
+}
+@mixin table-screen {
+    @media screen and (max-width: 576px) {
+        @content;
+    }
+}
+@mixin laptop-screen {
+    @media screen and (max-width: 576px) {
+        @content;
+    }
+}
+@mixin pc-screen {
+    @media screen and (max-width: 576px) {
+        @content;
+    }
+}

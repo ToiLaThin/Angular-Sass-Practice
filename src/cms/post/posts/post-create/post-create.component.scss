@@ -1,0 +1,21 @@
+@import '/src/styles/_component.scss';
+
+img {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+// control co class .ng-valid va co attribute required
+.ng-touched.ng-valid[required] {
+    border-bottom: 2px solid #42A948; /* green */
+}
+
+.ng-touched.ng-invalid:not(form)  {
+    border-bottom: 2px solid #a94442; /* red */
+}
+
+.disabled-btn {
+    border: 1px solid #ccc;
+    
+}

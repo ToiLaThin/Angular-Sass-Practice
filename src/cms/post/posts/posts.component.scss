@@ -1,0 +1,9 @@
+.row {
+    display: flex;
+    .col-left {
+        width: 100%;
+    }
+    .col-right {
+        width: auto;
+    }
+}

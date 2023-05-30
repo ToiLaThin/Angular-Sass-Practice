@@ -10,12 +10,15 @@ import { PostsService } from '../../services/posts.service';
 })
 export class PostDetailComponent {
 
-  post: IPost;
+  post: IPost | undefined;
   blogId: number = 0;
   constructor(private route: ActivatedRoute, private postsService: PostsService) { 
     this.route.params.subscribe(params => {
       this.blogId = params['id']
     });
-    this.post = this.postsService.posts$.getValue()[this.blogId]
+    this.post = this.postsService.posts$.getValue().find(p => p.id == this.blogId);
+    // console.log("From post detail, blog id:",this.blogId);
+    // console.log("From post detail, all posts:",this.postsService.posts$.getValue());
+    // console.log("From post detail, selected post:",this.post);
   }
 }

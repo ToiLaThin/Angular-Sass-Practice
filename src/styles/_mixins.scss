@@ -12,6 +12,13 @@
         @content;
     }
 }    
+@mixin clear-fix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
 
 @mixin card {
     border-radius: 4px;

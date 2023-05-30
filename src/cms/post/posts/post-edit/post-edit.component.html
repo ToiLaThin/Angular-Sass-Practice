@@ -1,21 +1,61 @@
-<form [formGroup]="postEdit" (ngSubmit)="editPost()">
-    <label for="title">Title</label>
-    <input type="text" formControlName="title" id="title">
-    <br>
+<form [formGroup]="postEdit" (ngSubmit)="editPost()" class="container">
+    <div class="form-header">
+        <a [routerLink]="['/posts', {outlets: { primary: null } }]" class="form-close-btn"><span>&times;</span></a>
+    </div>
+    <div class="form-body">
+        <div class="form-group">
+            <div>
+                <label for="image">Image Url: </label>
+                <input formControlName="image" 
+                       id="image"
+                       required 
+                >
+            </div>
+            <div class="cover-img-container">
+                <img [src]="this.postEdit.value.image" alt="">
+            </div>
+        </div>
+        <br>
+        
+        <div>
+            <label for="title">Title: </label>
+            <input type="text" 
+                   formControlName="title" 
+                   id="title"
+                   required 
+                   max="50" min="20"
+            >
+            <!-- <ng-container *ngIf="title.invalid && title.touched">
+                <app-form-message [message]="'Title required'"></app-form-message>
+            </ng-container> -->
+        </div>
+        <br>
 
-    <label for="content">Content</label>
-    <input type="text" formControlName="content" id="content">
-    <br>
-
-    <label for="image">Image Url:</label>
-    <input type="text" formControlName="image" id="image">
-    <br>
-
-    <label for="status">Status</label>
-    <select formControlName="status" id="status">
-        <option value="st" *ngFor="let st of this.allStatus">{{st}}</option>
-    </select>
-    <br>
-
-    <button type="submit">Submit</button>
+        <div>
+            <label for="content">Content: </label>
+            <ckeditor [editor]="rEditor" 
+                    formControlName="content"
+                    name="content" 
+                    id="content"
+                    tagName="textarea"
+            >
+            </ckeditor>
+            <!-- <ng-container *ngIf="content.invalid && content.touched">
+                <app-form-message [message]="'Content required'"></app-form-message>
+            </ng-container> -->
+        </div>
+        <br>        
+           
+        <div>
+            <label for="status">Status:</label>
+            <select formControlName="status" id="status">
+                <option value="st" *ngFor="let st of this.allStatus">{{st}}</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="form-footer">
+        <button type="submit">Edit</button>
+        
+    </div>
 </form>

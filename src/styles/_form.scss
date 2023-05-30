@@ -1,0 +1,113 @@
+@import "mixins";
+
+form {
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    @include card;
+}
+
+input {
+    width: 280px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+}
+
+textarea {
+    width: 280px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+label {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    font-weight: bold;
+}
+
+// control co class .ng-valid va co attribute required
+.ng-touched.ng-valid[required] {
+    border: 2px solid #42A948; /* green */
+}
+
+.ng-touched.ng-invalid:not(form)  {
+    border: 2px solid #a94442; /* red */
+}
+
+
+
+:host ::ng-deep .ck-editor__editable_inline {
+    min-height: 500px;
+    min-width: 400px;
+}
+
+.cover-img-container {
+    img {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+    }
+}
+
+.form-group {
+    @include flex;
+    justify-content: space-between;
+}
+
+.form-header {
+    height: 100px;
+    background-color: var(--bg-secondary);
+    margin-bottom: 1rem;
+    .form-close-btn {
+        position: relative;
+        top: 12%;
+        left: 90%;
+        
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--clr-primary-red);
+        &:hover {
+            @include zoom-hover;
+        }
+        @include clear-fix;
+        
+    }
+}
+
+.form-footer {
+    height: 100px;
+    background-color: var(--bg-primary);
+    @include flex;
+    justify-content: space-around;
+
+    .disabled-btn {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    button {
+        padding: 0.8rem 1rem;
+        border: 1px solid var(--text-prime);
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+            @include zoom-hover;
+            color: var(--clr-primary-red);
+            border-color: var(--clr-primary-red);
+        }
+    }
+}

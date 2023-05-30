@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PostsService } from '../../services/posts.service';
 import { IPost } from '../../types/post.interface';
 import { StatusEnum } from '../../types/status.enum';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-post-edit',
@@ -20,7 +21,7 @@ export class PostEditComponent implements OnInit {
     status: new FormControl(),
   });
   allStatus = Object.values(StatusEnum).filter((v) => typeof v === 'string');
-
+  public rEditor = ClassicEditor;
   constructor(
     private route: ActivatedRoute,
     private postsService: PostsService,

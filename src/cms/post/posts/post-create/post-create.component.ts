@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IPost } from '../../types/post.interface';
 import { PostsService } from '../../services/posts.service';
 import { StatusEnum } from '../../types/status.enum';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 @Component({
   selector: 'app-post-create',
   templateUrl: './post-create.component.html',
@@ -12,6 +13,10 @@ export class PostCreateComponent implements OnInit {
   allStatus = Object.values(StatusEnum).filter(x => typeof(x) == 'string'); //to remember
   submmited = false;
 
+
+  //rich text editor
+  public rEditor = ClassicEditor;
+  
   constructor(private postsService: PostsService) {}
 
   ngOnInit(): void {

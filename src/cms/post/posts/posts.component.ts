@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { NgStyle } from '@angular/common';
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-posts',
@@ -6,7 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent{
+  
+  @ViewChild('colRight', {read: ElementRef, static: true}) colRight!: ElementRef;
+  constructor(private renderer: Renderer2) {}
 
-  constructor() {}
+  ngAfterViewInit(): void {
+    // console.log("From posts component: ", this.colRight.nativeElement);
+    
+    
+  }
 
+  onResize(): any {
+    // console.log("From posts component: ", this.colRight.nativeElement);
+    if (window.innerWidth < 1000) {
+      this.renderer.addClass(this.colRight.nativeElement, 'layer');
+    } else {
+      this.renderer.removeClass(this.colRight.nativeElement, 'layer')
+    }
+  }
 }

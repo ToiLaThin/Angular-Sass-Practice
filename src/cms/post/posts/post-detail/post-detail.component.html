@@ -1,6 +1,10 @@
 <div>
-    <img src="{{post.image}}" alt="">
-    <h3>{{post.title}}</h3>
-    <p>{{post.content}}</p>
-    <span>{{post.status}}</span>
+    <img src="{{post?.image}}" alt="">
+    <h3>{{post?.title}}</h3>
+    <p [innerHTML]="post?.content"></p>
+
+    <hr>
+    Source:
+    <pre><code>{{post?.content}}</code></pre>
+    <span>{{post?.status}}</span>
 </div>

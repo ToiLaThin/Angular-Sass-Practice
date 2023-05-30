@@ -8,6 +8,7 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { SharedModule } from 'src/shared/shared.module';
 import { PostEditComponent } from './posts/post-edit/post-edit.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 const routes: Routes = [
   {
@@ -53,7 +54,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
+    CKEditorModule
   ],
   exports: [
     PostsComponent

@@ -3,13 +3,17 @@ import { CommonModule } from '@angular/common';
 import { SharedPillBtnComponent } from './components/shared-pill-btn/shared-pill-btn.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormMessageComponent } from './components/form-message/form-message.component';
+import { HtmlToTextPipe } from './pipes/html-to-text.pipe';
+import { InitialCharsPipe } from './pipes/initial-chars.pipe';
 
 
 
 @NgModule({
   declarations: [
     SharedPillBtnComponent,
-    FormMessageComponent
+    FormMessageComponent,
+    HtmlToTextPipe,
+    InitialCharsPipe
   ],
   imports: [
     CommonModule,
@@ -20,7 +24,10 @@ import { FormMessageComponent } from './components/form-message/form-message.com
     CommonModule,
     FormMessageComponent,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HtmlToTextPipe,
+    InitialCharsPipe
+
   ]
 })
 export class SharedModule { }

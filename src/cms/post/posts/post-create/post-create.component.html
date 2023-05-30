@@ -1,58 +1,69 @@
-<form action="post" (ngSubmit)="onSubmit()" #postCreateForm="ngForm" class="container form-card">
-    <div class="form-group">
-        <label for="title">Title: </label>
-        <input type="text" name="title" id="title"
-                required max="50" min="20"
-                [(ngModel)]="post.title"
-                #title="ngModel"        
-        >
-        <ng-container *ngIf="title.invalid && title.touched">
-            <app-form-message [message]="'Title required'"></app-form-message>
-        </ng-container>
+<form action="post" (ngSubmit)="onSubmit()" #postCreateForm="ngForm" class="container">
+    <div class="form-header">
+        <a [routerLink]="['/posts', {outlets: { postsCreate: null } }]" class="form-close-btn"><span>&times;</span></a>
     </div>
-    <br>
-
-    <div class="form-group">
-        <label for="content">Content: </label>
-        <br>
-        <textarea type="text" name="content" id="content"
-                required
-                [(ngModel)]="post.content"
-                #content="ngModel"        
-        >
-        </textarea>
-        <ng-container *ngIf="content.invalid && content.touched">
-            <app-form-message [message]="'Content required'"></app-form-message>
-        </ng-container>
-    </div>
-    <br>
-
-    <div class="form-group">
-        <img [src]="post.image" alt="" style="width: 100%; height: auto;">
-        <label for="image">Image Url: </label>
-        <input type="text" name="image" id="image"
+    <div class="form-body">
+        <div class="form-group">
+            <div>
+                <label for="image">Image Url: </label>
+                <input type="text" name="image" id="image"
                 required 
                 [(ngModel)]="post.image"
                 #title="ngModel"        
-        >
+                >
+            </div>
+            <div class="cover-img-container">
+                <img [src]="post.image" alt="">
+            </div>
+        </div>
+        <br>
+        
+        <div>
+            <label for="title">Title: </label>
+            <input type="text" name="title" id="title"
+            required max="50" min="20"
+            [(ngModel)]="post.title"
+            #title="ngModel"        
+            >
+            <ng-container *ngIf="title.invalid && title.touched">
+                <app-form-message [message]="'Title required'"></app-form-message>
+            </ng-container>
+        </div>
+        <br>
+
+        <div>
+            <label for="content">Content: </label>
+            <ckeditor [editor]="rEditor" name="content" id="content"
+                    tagName="textarea"
+                    required
+                    [(ngModel)]="post.content"
+                    #content="ngModel"  
+            >
+            </ckeditor>
+            <ng-container *ngIf="content.invalid && content.touched">
+                <app-form-message [message]="'Content required'"></app-form-message>
+            </ng-container>
+        </div>
+        <br>        
+           
+        <div>
+            <label for="status">Status:</label>
+            <select 
+                name="status" id="status"
+                required
+                [(ngModel)]="post.status"
+                #status="ngModel"
+            >
+                <option *ngFor="let st of allStatus;" [value]="st">{{st}}</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="form-footer">
+        <button type="submit" [disabled]="!postCreateForm.valid" [ngClass]="{'disabled-btn' : !postCreateForm.valid}">Submit</button>
+        <button type="button" (click)="resetAllFields()">Reset</button>
+        
     </div>
 
-    <div class="form-group">
-        <label for="status">Status:</label>
-        <select 
-            name="status" id="status"
-            required
-            [(ngModel)]="post.status"
-            #status="ngModel"
-        >
-            <option *ngFor="let st of allStatus;" [value]="st">{{st}}</option>
-        </select>
-    </div>
-
-    <button type="submit" [disabled]="!postCreateForm.valid" [ngClass]="{'disabled-btn' : !postCreateForm.valid}">Submit</button>
-    <br>
-    <button type="button" (click)="resetAllFields()">Reset</button>
-    <br>
-    <a [routerLink]="['/posts', {outlets: { postsCreate: null } }]">Close </a>
 
 </form>

@@ -1,13 +1,13 @@
-<div class="card">
-    <img src="{{postToRender.image}}" alt="post image">
-    <div>
-        <span>
-            <h3 (click)="viewDetailOfPost(postToRender.id)">{{postToRender.title}}</h3>
-        </span>
-        <p>{{postToRender.content}}</p>
+<article class="post">
+    <div class="post-header">
+        <img src="{{postToRender.image}}" alt="post image">
     </div>
-    <div style="display: flex;">
+    <div class="post-content">
+        <h3 (click)="viewDetailOfPost(postToRender.id)">{{postToRender.title}}</h3>
+        <p>{{postToRender.content | Html2PlainText | InitialChars}}</p>
+    </div>
+    <div class="post-footer">
         <app-shared-pill-btn [label]="'Edit'" (clickEmitter)="navigateEditComponent(postToRender.id)"></app-shared-pill-btn>
         <app-shared-pill-btn [label]="'Delete'" (clickEmitter)="deletePost()"></app-shared-pill-btn>
     </div>
-</div>
+</article>

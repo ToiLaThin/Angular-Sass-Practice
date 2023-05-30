@@ -1,4 +1,5 @@
-<ul>
+<button (click)='canChangeViewType ? changeLayout() : false'>Change Layout</button>
+<ul class="post-list-container" #postListContainer>
     <li *ngFor="let post of (this.posts$ | async)">
         <app-posts-render [post]="post"></app-posts-render>
     </li>

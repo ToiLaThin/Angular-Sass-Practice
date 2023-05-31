@@ -1,1 +1,12 @@
-<app-category-list></app-category-list>
+<!-- <mat-slide-toggle>Toggle me!</mat-slide-toggle> -->
+<a mat-fab color="warning" [routerLink]="[{outlets: {primary: 'list'}}]">
+    <mat-icon>list</mat-icon>
+</a>
+<a mat-fab color="accent" [routerLink]="[{outlets: {primary: 'create'}}]">
+    <mat-icon>add</mat-icon>
+</a>
+<a mat-fab color="primary">
+    <mat-icon>delete</mat-icon>
+</a>
+<br>
+<router-outlet></router-outlet>

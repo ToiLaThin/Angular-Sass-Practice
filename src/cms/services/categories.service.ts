@@ -23,4 +23,12 @@ export class CategoriesService {
     this.$allCategories.next(categories);
   }
 
+  getId(): number {
+    const categories = this.$allCategories.getValue();
+    if (categories.length == 0)
+      return 0;
+    const ids = categories.map(c => c.id);
+    return Math.max(...ids) + 1;
+  }
+
 }

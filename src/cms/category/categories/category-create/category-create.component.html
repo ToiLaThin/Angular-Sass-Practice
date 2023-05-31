@@ -1,0 +1,26 @@
+
+<form (ngSubmit)="onSubmit()" #categoryCreateForm="ngForm">
+    <mat-form-field appearance="fill">
+        <mat-label>Category Name</mat-label>
+        <input matInput 
+               type="text"
+               placeholder="Category 's name" 
+               [(ngModel)]="this.newCategory.name" 
+               name="name" 
+               required
+        >
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+        <mat-label>Category Description</mat-label>
+        <input matInput 
+               type="text"
+               placeholder="Describe this category:" 
+               [(ngModel)]="this.newCategory.description" 
+               name="description" 
+               required
+        >
+    </mat-form-field>
+    <br>
+    <button type="submit" mat-raised-button color="warn" [ngClass]="{'disabled-submit-btn' :'!categoryCreateForm.valid'}">Submit</button>
+</form>

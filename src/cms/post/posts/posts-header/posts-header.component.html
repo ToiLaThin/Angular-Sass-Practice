@@ -11,13 +11,9 @@
         <h1 class="filter-item-inner-heading minus">Category</h1>
         <ul class="filter-attribute-list">
           <div class="filter-attribute-list-inner">
-            <li class="filter-attribute-item">
+            <li class="filter-attribute-item" *ngFor="let cate of (this.allCategories$ | async)">
               <input type="checkbox" id="colour-attribute-1" />
-              <label for="colour-attribute-1"> White </label>
-            </li>
-            <li class="filter-attribute-item">
-              <input type="checkbox" id="colour-attribute-2" />
-              <label for="colour-attribute-2"> Lime </label>
+              <label for="colour-attribute-1"> {{cate.name}} </label>
             </li>
           </div>
         </ul>

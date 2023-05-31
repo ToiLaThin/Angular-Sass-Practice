@@ -4,23 +4,33 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class CategoriesService {
-
+  categoryKey = 'categories'; // key for local storage
   $allCategories: BehaviorSubject<ICategory[]> = new BehaviorSubject<ICategory[]>([]);
-  constructor() { }
+  constructor() { 
+    const categoriesStr = window.localStorage.getItem(this.categoryKey);
+    if(categoriesStr) {
+      const categoriesLstObj = JSON.parse(categoriesStr);
+      this.$allCategories.next(categoriesLstObj);
+      console.log(categoriesLstObj);
+      console.log(typeof(categoriesLstObj));
+    }
+  }
 
   addCategory(category: ICategory): void {
     const categories = this.$allCategories.getValue();
     categories.push(category);
     this.$allCategories.next(categories)
+    window.localStorage.setItem(this.categoryKey, JSON.stringify(categories));
   }
-
+  
   removeCategory(category: ICategory): void {
     const categories = this.$allCategories.getValue();
     const removeCateIdx = categories.findIndex(c => c.id == category.id);
     if(removeCateIdx < 0)
-      return;
+    return;
     categories.splice(removeCateIdx, 1);
     this.$allCategories.next(categories);
+    window.localStorage.setItem(this.categoryKey, JSON.stringify(categories));
   }
 
   getId(): number {

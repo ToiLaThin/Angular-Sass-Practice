@@ -12,14 +12,14 @@ import { CategoriesService } from './services/categories.service';
   declarations: [],
   imports: [
     CommonModule,
-    PostModule,
-    CategoryModule,
+    //PostModule,
+    //CategoryModule,
     SharedModule
   ],
   exports: [
     //import Cms in App will import everything of Post & Cate Module
-    PostModule,
-    CategoryModule
+    //PostModule,
+    //CategoryModule
   ],
   providers: [
     PostsService,

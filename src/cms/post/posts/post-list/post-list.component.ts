@@ -1,11 +1,11 @@
 import { Component, ElementRef, EmbeddedViewRef, OnInit, QueryList, Renderer2, TemplateRef, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
 import { Observable, Subscription, map } from 'rxjs';
-import { IPost } from '../../types/post.interface';
-import { PostsService } from '../../services/posts.service';
+import { IPost } from '../../../types/post.interface';
 import { ActivatedRoute, Router } from '@angular/router';
-import { StatusEnum } from '../../types/status.enum';
+import { StatusEnum } from '../../../types/status.enum';
 import { PostsRenderComponent } from './posts-render/posts-render.component';
-import { ViewTypeEnum } from '../../types/view-type.enum';
+import { ViewTypeEnum } from '../../../types/view-type.enum';
+import { PostsService } from 'src/cms/services/posts.service';
 
 @Component({
   selector: 'app-post-list',

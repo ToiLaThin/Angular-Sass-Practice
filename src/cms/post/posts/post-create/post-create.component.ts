@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IPost } from '../../types/post.interface';
-import { PostsService } from '../../services/posts.service';
-import { StatusEnum } from '../../types/status.enum';
+import { IPost } from '../../../types/post.interface';
+import { StatusEnum } from '../../../types/status.enum';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { PostsService } from 'src/cms/services/posts.service';
 @Component({
   selector: 'app-post-create',
   templateUrl: './post-create.component.html',

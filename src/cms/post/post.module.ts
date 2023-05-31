@@ -13,7 +13,7 @@ import { PostsHeaderComponent } from './posts/posts-header/posts-header.componen
 
 const routes: Routes = [
   {
-    path: 'posts',
+    path: '',
     component: PostsComponent,
     children: [
       {

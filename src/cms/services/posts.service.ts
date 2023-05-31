@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { IPost } from '../types/post.interface';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable(
+  //{ providedIn: 'root'}
+    )
 export class PostsService {
 
   $newId: BehaviorSubject<number> = new BehaviorSubject<number>(1);

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IPost } from '../../../types/post.interface';
+import { IPost } from '../../../../types/post.interface';
 import { Router } from '@angular/router';
-import { PostsService } from 'src/cms/post/services/posts.service';
+import { PostsService } from 'src/cms/services/posts.service';
 
 @Component({
   selector: 'app-posts-render',

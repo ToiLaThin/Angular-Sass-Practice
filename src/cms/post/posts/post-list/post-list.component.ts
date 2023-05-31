@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, EmbeddedViewRef, OnInit, QueryList, Renderer2, TemplateRef, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
 import { Observable, Subscription, map } from 'rxjs';
 import { IPost } from '../../types/post.interface';
 import { PostsService } from '../../services/posts.service';
@@ -19,9 +19,12 @@ export class PostListComponent implements OnInit {
   @ViewChild('postListContainer', {read: ElementRef, static: true}) postListContainer!: ElementRef;
   // @ViewChildren(PostsRenderComponent) postsToRender!: QueryList<PostsRenderComponent>;
   @ViewChildren(PostsRenderComponent, {read: ElementRef}) postsToRender!: QueryList<ElementRef>;
+  @ViewChild('tableViewContainer', {read: ViewContainerRef, static: true}) tableViewContainer!: ViewContainerRef;
+  @ViewChild('postListTable', {read: TemplateRef, static: true}) postListTable!: TemplateRef<any>;
   postsDOM: ElementRef[] = [];
 
   canChangeViewType: boolean = true;
+  isTableViewType = false;
   viewType: ViewTypeEnum = ViewTypeEnum.Default;
 
   constructor(private postsService: PostsService, 
@@ -63,9 +66,8 @@ export class PostListComponent implements OnInit {
   }
     
 
-
-
   changeLayout() {
+    const postsTableEmbeddedView: EmbeddedViewRef<any> = this.postListTable.createEmbeddedView(null);
     if(this.viewType === ViewTypeEnum.Default) {
       this.viewType = ViewTypeEnum.News;
       this.postsDOM.forEach(p => {
@@ -81,10 +83,11 @@ export class PostListComponent implements OnInit {
         this.renderer.addClass(postHeader, 'post-news-view-type-header');
         this.renderer.addClass(postContent, 'post-news-view-type-content');
         this.renderer.addClass(postFooter, 'post-news-view-type-footer');
-        console.log(postComponent,postHeader,postContent,postFooter);
+        //console.log(postComponent,postHeader,postContent,postFooter);
       });
     } else if (this.viewType == ViewTypeEnum.News) {
-      this.viewType = ViewTypeEnum.Default;
+      this.viewType = ViewTypeEnum.Table;
+      this.isTableViewType = true;
       this.postsDOM.forEach(p => {
         const postComponent: HTMLElement = (p.nativeElement as HTMLElement);
         const postElement = postComponent.querySelector('.post');
@@ -95,9 +98,14 @@ export class PostListComponent implements OnInit {
         this.renderer.removeClass(postHeader, 'post-news-view-type-header');
         this.renderer.removeClass(postContent, 'post-news-view-type-content');
         this.renderer.removeClass(postFooter, 'post-news-view-type-footer');
-        console.log(postComponent,postHeader,postContent,postFooter);
+        //console.log(postComponent,postHeader,postContent,postFooter);
+        this.tableViewContainer.insert(postsTableEmbeddedView);
 
       });
+    } else if (this.viewType == ViewTypeEnum.Table) {
+      this.viewType = ViewTypeEnum.Default;
+      this.isTableViewType = false;
+      this.tableViewContainer.remove(0)
     }
   }
 }

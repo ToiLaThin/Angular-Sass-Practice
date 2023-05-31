@@ -9,6 +9,7 @@ import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { SharedModule } from 'src/shared/shared.module';
 import { PostEditComponent } from './posts/post-edit/post-edit.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { PostsHeaderComponent } from './posts/posts-header/posts-header.component';
 
 const routes: Routes = [
   {
@@ -49,7 +50,8 @@ const routes: Routes = [
     PostDetailComponent,
     PostListComponent,
     PostCreateComponent,
-    PostEditComponent
+    PostEditComponent,
+    PostsHeaderComponent
   ],
   imports: [
     CommonModule,

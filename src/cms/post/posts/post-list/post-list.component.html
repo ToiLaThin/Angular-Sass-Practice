@@ -1,6 +1,29 @@
 <button (click)='canChangeViewType ? changeLayout() : false'>Change Layout</button>
-<ul class="post-list-container" #postListContainer>
-    <li *ngFor="let post of (this.posts$ | async)">
-        <app-posts-render [post]="post"></app-posts-render>
-    </li>
-</ul>
+<div [hidden]="isTableViewType">
+    <ul class="post-list-container" #postListContainer>
+        <li *ngFor="let post of (this.posts$ | async)">
+            <app-posts-render [post]="post"></app-posts-render>
+        </li>
+    </ul>
+</div>
+
+<ng-template #postListTable>
+    <table>
+        <tr>
+            <th>Cover Image</th>
+            <th>Title</th>
+            <th>Content preview</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let post of (this.posts$ | async)">
+            <td><img src="{{post.image}}" alt=""></td>
+            <td>{{post.title}}</td>
+            <td>{{post.content | Html2PlainText | InitialChars}}</td>
+            <td>
+            </td>
+        </tr>
+    </table>
+</ng-template>
+<ng-container #tableViewContainer>
+
+</ng-container>

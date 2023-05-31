@@ -1,0 +1,43 @@
+@import '/src/styles/mixins';
+
+:host {
+    @include flex;
+}
+
+.sidebar-heading {
+	padding: 10px;
+	background-color: #eee;
+	font-size: 1.6em;
+}
+
+.filter-item-inner {
+    border-right: 1px solid #eee;
+    border-left: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+
+    &-heading {
+        position: relative;
+        padding: 10px;
+        font-size: 1.2em;
+        cursor: pointer;
+    
+        &.minus::after,
+        &.plus::after { 
+            position: absolute;
+            top: 33%;
+            right: 7.5%;
+            font-size: .6em;
+        };
+        &.minus::after { content: "▲"; }
+        &.plus::after { content: "▼"; }
+    }
+}
+
+.filter-attribute-list {  //hide 
+    overflow: hidden; 
+    .filter-attribute-list-inner {
+        padding: 0 10px 15px; 
+        .filter-attribute-item {padding-left: 10px;margin-top: 5px;}
+    }
+}
+

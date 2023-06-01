@@ -12,7 +12,7 @@ export class CategoryListComponent implements OnInit {
 
   allCategories$!: Observable<ICategory[]>;
   constructor(private categoriesService: CategoriesService) { 
-    this.allCategories$ = this.categoriesService.$allCategories;
+    this.allCategories$ = this.categoriesService.allCategories$;
   }
 
   ngOnInit(): void {

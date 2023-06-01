@@ -31,7 +31,7 @@ export class PostListComponent implements OnInit {
               private route: ActivatedRoute,
               private router: Router,
               private renderer: Renderer2) { 
-    this.posts$ = postsService.posts$.pipe(
+    this.posts$ = postsService.displayingPosts$.pipe(
       map((p) => p)
     );
     // this.subscription = this.route.url.subscribe( 
@@ -43,14 +43,16 @@ export class PostListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.postsService.addPost({
-      id: this.postsService.getNewId(),
-      title: 'Test Post 1',
-      image: 'https://picsum.photos/200/300',
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-      date: new Date(),
-      status: StatusEnum.Published
-    });
+    // this.postsService.addPost({
+    //   id: this.postsService.getNewId(),
+    //   title: 'Test Post 1',
+    //   image: 'https://picsum.photos/200/300',
+    //   content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+    //   date: new Date(),
+    //   status: StatusEnum.Published,
+    //   categoryId: 0
+    // });
+    //this.postsService.filterPostsByCategory();
   }
 
   ngAfterViewInit(): void {

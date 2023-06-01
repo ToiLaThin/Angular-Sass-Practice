@@ -28,6 +28,7 @@ export class CategoryCreateComponent implements OnInit, AfterViewInit {
 
   onSubmit() {
     this.categoriesService.addCategory(this.newCategory);
+    this.newCategoryId = this.categoriesService.getId();
     this.reset();
   }
 

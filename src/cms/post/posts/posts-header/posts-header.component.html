@@ -12,7 +12,11 @@
         <ul class="filter-attribute-list">
           <div class="filter-attribute-list-inner">
             <li class="filter-attribute-item" *ngFor="let cate of (this.allCategories$ | async)">
-              <input type="checkbox" id="colour-attribute-1" />
+              <input type="checkbox" 
+                     id="colour-attribute-1" 
+                     value="{{cate.id}}"
+                     (change)="onCategoryChange($event)"
+              />
               <label for="colour-attribute-1"> {{cate.name}} </label>
             </li>
           </div>

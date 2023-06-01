@@ -6,6 +6,7 @@ export interface IPost {
     image: string,
     content: string,
     date: Date,
-    status: StatusEnum
+    status: StatusEnum,
+    categoryId: number
 }
 

@@ -1,4 +1,4 @@
-<form action="post" (ngSubmit)="onSubmit()" #postCreateForm="ngForm" class="container">
+<form action="post" (ngSubmit)="onSubmit()" #postCreateForm="ngForm">
     <div class="form-header">
         <a [routerLink]="['/posts', {outlets: { postsCreate: null } }]" class="form-close-btn"><span>&times;</span></a>
     </div>
@@ -55,6 +55,22 @@
                 #status="ngModel"
             >
                 <option *ngFor="let st of allStatus;" [value]="st">{{st}}</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="category">Category:</label>
+            <select id="category"
+                    name="category" 
+                    required
+                    [(ngModel)]="post.categoryId"
+                    #category="ngModel"
+            >
+                <option *ngFor="let cate of (this.allCategories$ | async)" 
+                        [value]="cate.id"
+                >
+                        {{cate.name}}
+                </option>
             </select>
         </div>
     </div>

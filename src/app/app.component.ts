@@ -11,6 +11,11 @@ export class AppComponent {
   handleClick() {
     console.log('handleClick()');
   }
+
+  resetLocalStorageAndReload() {
+    window.localStorage.clear();
+    window.location.reload();
+  }
 }
 
 

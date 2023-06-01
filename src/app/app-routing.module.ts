@@ -6,11 +6,17 @@ import { PostsComponent } from 'src/cms/post/posts/posts.component';
 const routes: Routes = [
 {
   path: 'posts',
-  loadChildren: () => import('../cms/post/post.module').then(m => m.PostModule)
+  loadChildren: () => import('../cms/post/post.module').then(m => m.PostModule),
+  data: {
+    breadcrumb: 'Posts'
+  }
 },
 {
   path: 'categories',
-  loadChildren: () => import('../cms/category/category.module').then(m => m.CategoryModule)
+  loadChildren: () => import('../cms/category/category.module').then(m => m.CategoryModule),
+  data: {
+    breadcrumb: 'Categories'
+  }
 }
 ];
 

@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormMessageComponent } from './components/form-message/form-message.component';
 import { HtmlToTextPipe } from './pipes/html-to-text.pipe';
 import { InitialCharsPipe } from './pipes/initial-chars.pipe';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,14 +15,17 @@ import { InitialCharsPipe } from './pipes/initial-chars.pipe';
     SharedPillBtnComponent,
     FormMessageComponent,
     HtmlToTextPipe,
-    InitialCharsPipe
+    InitialCharsPipe,
+    BreadcrumbComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
+    RouterModule
   ],
   exports: [
     SharedPillBtnComponent,
+    BreadcrumbComponent,
     CommonModule,
     FormMessageComponent,
     FormsModule,

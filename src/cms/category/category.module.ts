@@ -23,12 +23,18 @@ const routes: Routes = [
         component: CategoryListComponent,
         outlet: 'primary',
         pathMatch: 'full',
+        data: {
+          breadcrumb: 'Categories List'
+        }
       },
       {
         path: 'create',
         component: CategoryCreateComponent,
         outlet: 'primary',
         pathMatch: 'full',
+        data: {
+          breadcrumb: 'Categories Create'
+        }
       },
 
     ]

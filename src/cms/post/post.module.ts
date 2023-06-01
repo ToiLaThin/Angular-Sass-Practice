@@ -20,24 +20,35 @@ const routes: Routes = [
         path: 'list',
         component: PostListComponent,
         pathMatch: 'full',
+        data: {
+          breadcrumb: 'Posts List',
+        },
       },
       {
         path: 'detail/:id',
         component: PostDetailComponent,
         pathMatch: 'full',
+        data: {
+          breadcrumb: 'Detail',
+        },
       },
       {
         path: 'edit/:id',
         component: PostEditComponent,
         // outlet: 'postsCreate',
         pathMatch: 'full',
-
+        data: {
+          breadcrumb: 'Edit',
+        },
       },
       {
         path: 'create',
         component: PostCreateComponent,
         outlet: 'postsCreate',
         pathMatch: 'full',
+        data: {
+          breadcrumb: 'Posts Create',
+        },
       },
     ],
   },

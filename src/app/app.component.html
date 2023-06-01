@@ -6,11 +6,10 @@
     <div class="col-right">
         <app-main>
             <app-tabs>
-                
+                <li #tabItems><a routerLink="posts">Posts</a></li>
+                <li #tabItems><a routerLink="categories">Categories</a></li>
+                <li #tabItems><a type="button" (click)="resetLocalStorageAndReload()">Clear lStorage</a></li>
             </app-tabs>
-            <a href="" routerLink="posts">Go to posts</a>
-            <a href="" routerLink="categories">Go to categories</a>
-            <button (click)="resetLocalStorageAndReload()">Delete all data</button>
             <router-outlet></router-outlet>
         </app-main>
     </div>

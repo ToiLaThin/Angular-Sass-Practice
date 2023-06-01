@@ -7,6 +7,7 @@ import { HtmlToTextPipe } from './pipes/html-to-text.pipe';
 import { InitialCharsPipe } from './pipes/initial-chars.pipe';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { RouterModule } from '@angular/router';
+import { TabsComponent } from './components/tabs/tabs.component';
 
 
 
@@ -16,7 +17,8 @@ import { RouterModule } from '@angular/router';
     FormMessageComponent,
     HtmlToTextPipe,
     InitialCharsPipe,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    TabsComponent
   ],
   imports: [
     CommonModule,
@@ -24,6 +26,7 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   exports: [
+    TabsComponent,
     SharedPillBtnComponent,
     BreadcrumbComponent,
     CommonModule,

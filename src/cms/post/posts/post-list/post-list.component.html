@@ -1,4 +1,8 @@
-<button (click)='canChangeViewType ? changeLayout() : false'>Change Layout</button>
+<button (click)='canChangeViewType ? changeLayout() : false' class="view-type-btn">
+    <i *ngIf="viewType === 'News'" class="fa-solid fa-table"></i>
+    <i *ngIf="viewType === 'Table'" class="fa-regular fa-newspaper"></i>
+    <i *ngIf="viewType === 'Default'" class="fa-solid fa-list"></i>
+</button>
 <div [hidden]="isTableViewType">
     <ul class="post-list-container" #postListContainer>
         <li *ngFor="let post of (this.posts$ | async)">
@@ -16,7 +20,7 @@
             <th>Actions</th>
         </tr>
         <tr *ngFor="let post of (this.posts$ | async)">
-            <td><img src="{{post.image}}" alt=""></td>
+            <td class="img-td"><img src="{{post.image}}" alt=""></td>
             <td>{{post.title}}</td>
             <td>{{post.content | Html2PlainText | InitialChars}}</td>
             <td>

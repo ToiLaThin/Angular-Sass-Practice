@@ -1,4 +1,4 @@
-.breadcrumb {
+.breadcrumbs {
     background: none;
     font-size: 0.8em;
     margin: 0;
@@ -27,5 +27,5 @@
   }
 
   .active-breadcrumb {
-    color: red;
+    color: red !important;
   }

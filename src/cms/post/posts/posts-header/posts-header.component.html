@@ -1,27 +1,31 @@
-<br>
-<a [routerLink]="[{outlets: {primary: 'list'}}]">View all posts</a>
-<br>
-<a [routerLink]="[{outlets: {postsCreate: 'create'}}]">Let's make new post</a>
+<app-tabs>
+  <li #tabItems><a [routerLink]="[{outlets: {primary: 'list'}}]">View posts</a></li>
+  <li #tabItems><a [routerLink]="[{outlets: {postsCreate: 'create'}}]">New post</a></li>
+</app-tabs>
 <div>
-  <h1 class="sidebar-heading">Filter by</h1>
-
-  <ul class="filter">
-    <li class="filter-item">
-      <section class="filter-item-inner">
-        <h1 class="filter-item-inner-heading minus">Category</h1>
-        <ul class="filter-attribute-list">
-          <div class="filter-attribute-list-inner">
-            <li class="filter-attribute-item" *ngFor="let cate of (this.allCategories$ | async)">
-              <input type="checkbox" 
-                     id="colour-attribute-1" 
-                     value="{{cate.id}}"
-                     (change)="onCategoryChange($event)"
-              />
-              <label for="colour-attribute-1"> {{cate.name}} </label>
-            </li>
-          </div>
-        </ul>
-      </section>
-    </li>
-  </ul>
+  <app-breadcrumb></app-breadcrumb>
+  <!-- Start of filter by -->
+  <div>
+    <h1 class="sidebar-heading">Filter by</h1>
+    <ul class="filter">
+      <li class="filter-item">
+        <section class="filter-item-inner">
+          <h1 class="filter-item-inner-heading minus">Category</h1>
+          <ul class="filter-attribute-list">
+            <div class="filter-attribute-list-inner">
+              <li class="filter-attribute-item" *ngFor="let cate of (this.allCategories$ | async)">
+                <input type="checkbox" 
+                       id="colour-attribute-1" 
+                       value="{{cate.id}}"
+                       (change)="onCategoryChange($event)"
+                />
+                <label for="colour-attribute-1"> {{cate.name}} </label>
+              </li>
+            </div>
+          </ul>
+        </section>
+      </li>
+    </ul>
+  </div> 
+  <!-- End of filter by -->
 </div>

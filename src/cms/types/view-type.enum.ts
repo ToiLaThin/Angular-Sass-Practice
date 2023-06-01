@@ -1,5 +1,5 @@
 export enum ViewTypeEnum {
-    'Default',
-    'News',
-    'Table'
+    Default = 'Default',
+    News = 'News',
+    Table = 'Table'
 }

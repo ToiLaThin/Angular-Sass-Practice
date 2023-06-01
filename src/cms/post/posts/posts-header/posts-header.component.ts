@@ -48,14 +48,14 @@ export class PostsHeaderComponent implements OnInit {
     
     if (allSelectedCategoryIds.includes(value)) {
       this.categoriesService.removeSelectedCategoryId(value);
-      console.log(`From category filter: ${value} removed`);
+      //console.log(`From category filter: ${value} removed`);
       
     }
     else {
       this.categoriesService.addSelectedCategoryId(value);
-      console.log(`From category filter: ${value} added`);
+      //console.log(`From category filter: ${value} added`);
     }
-    console.log("From category filter:" +this.categoriesService.selectedCategoryIds$.getValue());
+    //console.log("From category filter:" +this.categoriesService.selectedCategoryIds$.getValue());
     
     this.postsService.filterPostsByCategory();
   }

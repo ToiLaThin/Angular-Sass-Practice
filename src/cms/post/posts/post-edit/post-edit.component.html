@@ -52,6 +52,20 @@
                 <option value="st" *ngFor="let st of this.allStatus">{{st}}</option>
             </select>
         </div>
+
+        <div>
+            <label for="category">Category</label>
+            <select id="category" 
+                    formControlName="category"
+            >
+                <option *ngFor="let cate of (this.allCategories$ | async)"
+                        [value]="cate.id" 
+                        defaultSelected="cate.id === this.postEditing.categoryId"
+                >
+                    {{cate.name}}
+                </option>    
+            </select>
+        </div>
     </div>
     
     <div class="form-footer">

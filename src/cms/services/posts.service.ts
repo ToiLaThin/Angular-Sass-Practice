@@ -19,6 +19,9 @@ export class PostsService {
       console.log(`posts service inited with data: ${postLstObj} with type: ${typeof(postLstObj)}`);
       this.posts$.next(postLstObj);
       //this.displayingPosts$ = this.posts$; ? this line caused error
+      this.posts$.subscribe(posts => {
+        this.filterPostsByCategory();//change displayingPosts$ when posts$ changes
+      });
     }
   }
 
@@ -37,15 +40,23 @@ export class PostsService {
   
   editPost(post: IPost): void {
     const posts = this.posts$.getValue();
-    const idx = posts.findIndex(p => p.id = post.id);
+    const idx = posts.findIndex(p => p.id === post.id);
     posts[idx] = post;
     this.posts$.next(posts);
     window.localStorage.setItem(this.postsKey, JSON.stringify(posts));
   }
   
   deletePost(post: IPost) : void{
+    
     const posts = this.posts$.getValue();
-    const idx = posts.findIndex(p => p.id = post.id);
+    // console.log("Received post to delete: ", post);
+    // console.log("Posts before delete: ", posts);
+    
+    const idx = posts.findIndex(p => p.id === post.id);
+    // console.log("Index to delete: ", idx);
+    // console.log("type of idx: ", typeof(posts[0].id));
+    
+    
     if(idx < 0) 
     return;
     posts.splice(idx, 1);
@@ -67,7 +78,7 @@ export class PostsService {
     const selectedCategoryIds: number[] = this.categoriesService.selectedCategoryIds$.getValue();
     if(selectedCategoryIds.length === 0) {
       const allPosts = this.posts$.getValue();
-      console.log("All posts:",allPosts);
+      //console.log("All posts:",allPosts);
       this.displayingPosts$.next(allPosts);
       return;
     }
@@ -81,7 +92,7 @@ export class PostsService {
         //selectedCategoryIds.includes(pCateId);
         return selectedCategoryIds.includes(pCateId);
       });
-    console.log("from filterPostsByCategory: " + toDisplayPosts);
+    //console.log("from filterPostsByCategory: " + toDisplayPosts);
     this.displayingPosts$.next(toDisplayPosts);
   }
 }

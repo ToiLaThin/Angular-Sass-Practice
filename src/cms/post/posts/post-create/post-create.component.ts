@@ -36,6 +36,13 @@ export class PostCreateComponent implements OnInit {
   }
 
   onSubmit() {
+  // console.log("From onSubmit() of post-create.component.ts");
+  // console.log(typeof(this.post.categoryId)); // la string
+  // console.log(this.post.categoryId);
+    
+    
+    
+    this.post.categoryId = parseInt(this.post.categoryId.toString());
     this.postsService.addPost(this.post);
     console.log(this.post);
     this.resetAllFields();

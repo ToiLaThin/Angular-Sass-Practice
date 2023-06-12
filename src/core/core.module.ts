@@ -5,6 +5,7 @@ import { HNavbarComponent } from './layouts/h-navbar/h-navbar.component';
 import { HNavbarOptionsComponent } from './layouts/h-navbar/h-navbar-options/h-navbar-options.component';
 import { MainComponent } from './layouts/main/main.component';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from 'src/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   exports: [
     VNavbarComponent,

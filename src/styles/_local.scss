@@ -1,0 +1,109 @@
+//shade-layer-bg 
+$bg-shade-layer: #1e1e1e;
+
+//dark-theme
+.dark-theme {
+    --bg-th: rgb(55 65 81);
+    --bg-td: rgb(17 24 39);
+    --th-text: rgb(156 163 175);
+    --td-text: rgb(156 163 175);
+    --border-clr: rgb(55 65 81);
+    --bg-form-btn: rgb(219 39 119);
+}
+
+//light-theme
+.light-theme {
+    --bg-th: rgb(229 231 235);
+    --bg-td: rgb(255 255 255);
+    --th-text: rgb(17 24 39);
+    --td-text: rgb(107 114 128);
+    --border-clr: #e5e7eb;
+    --bg-form-btn: rgb(37 99 235);
+}
+
+
+//bg btn
+$bg-btn-dark: rgb(219 39 119);
+$bg-btn-green: rgb(21 128 61);
+
+//clr text btn
+$clr-btn-blue-text: rgb(37 99 235);
+$clr-btn-red-text: rgb(220 38 38);
+
+
+
+//border
+$border: 2px solid var(--basic-border);
+$border-radius: 20px;
+@mixin border-bot {
+    border-bottom-width: 1px;
+}
+//padding
+$p-1: 0.25rem;
+//will override fullwidth form control in form
+@mixin basic-input {
+    background-color: transparent;
+    border: $border;
+    padding: $p-1;
+    border-radius: 0.375rem;
+}
+
+
+//font
+$fs-th: 0.75rem; //text-transform: uppercase;
+$fs-td: 0.875rem;
+$fs-h2: 1.25rem;
+$ff: "Montserrat", sans-serif;
+$fw-bold: 700; 
+$fw-normal: 500;
+$font-btn: $fw-normal $fs-td $ff;
+$font-form-h2: $fw-bold $fs-h2 $ff;
+
+//main text clr
+$clr-text-real-white: rgb(255 255 255);
+
+//padding
+$padding: 0.25rem;
+$p-form: 0.75rem;
+
+@mixin px-6 {
+    padding-left: 1.5rem; 
+    padding-right: 1.5rem;
+}
+
+@mixin py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+@mixin px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@mixin py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+//form btn
+@mixin btn-form{
+    color: $clr-text-real-white;
+    font-weight: $fw-bold;
+    font-size: $fs-td;
+    line-height: 1.25rem;
+    @include px-4;
+    @include py-2;
+    @content; //pls add background-color
+}
+
+//notification btn
+@mixin btn-notification{
+    background-color: $bg-btn-green;
+    color: $clr-text-real-white;
+    font-weight: $fw-bold;
+    font-size: $fs-td;
+    line-height: 1.25rem;
+    @include px-4;
+    @include py-2;
+    @content; //pls add background-color
+}

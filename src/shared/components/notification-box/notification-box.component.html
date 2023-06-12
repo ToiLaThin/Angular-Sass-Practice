@@ -1,0 +1,21 @@
+<div class="shade-layer">
+    <section class="notification">
+        <div class="notification__header">
+            <h1 class="notification__header__title"><i class="fas fa-user"></i>{{title}}</h1>
+            <button class="notification__header__close-btn" (click)="BtnCloseClickHandler()">&times;</button>
+        </div>
+        <div class="notification__body">
+            <p class="notification__body__message">{{this.message}}</p>
+        </div>
+        <div class="notification__footer">
+            <span *ngIf="isOkCancelBtn; then thenBlock; else elseBlock"></span>
+            <ng-template #thenBlock>
+                <button class="notification__footer__ok" (click)="BtnOkClickHandler()">Ok</button>
+                <button class="notification__footer__cancel" (click)="BtnCancelClickHandler()">No</button>
+            </ng-template>
+            <ng-template #elseBlock>
+                <button class="notification__footer__ok" (click)="BtnOkClickHandler()">Ok</button>
+            </ng-template>
+        </div>
+    </section>
+</div>

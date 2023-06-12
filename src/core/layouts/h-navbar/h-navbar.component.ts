@@ -9,11 +9,16 @@ export class HNavbarComponent implements OnInit {
 
   constructor() { }
 
+  showNotification = false;
   ngOnInit(): void {
   }
 
   toggleNav() {
     let ele = document.querySelector(".hnavbar-tabs") as HTMLUListElement;
     ele.classList.toggle("showNavs");
+  }
+
+  onCloseNotificationBox() {
+    this.showNotification = false;
   }
 }

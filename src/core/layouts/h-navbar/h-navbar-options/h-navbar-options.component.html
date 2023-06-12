@@ -2,10 +2,17 @@
     <i class="fa-solid fa-bell"></i>
     <span>99+</span>
 </a>
-<a class="hnavbar-account" type="button">
+<a class="hnavbar-account" type="button" (mouseenter)="toggleDropDown()">
     <div>
         <i class="fa-solid fa-user-tie"></i>
         <p>Admin</p>
     </div>
     <i class="fa-solid fa-caret-down" style="padding:0 0 13px 4px;"></i>
 </a>
+<ng-template [ngIf]="(this.showDropDown$ | async)">
+    <app-dropdown-menu>
+        <p><a href="">Hello</a></p>
+        <p><a href="">Hello</a></p>
+        <p><a href="">Hello</a></p>
+    </app-dropdown-menu>
+</ng-template>

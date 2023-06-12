@@ -13,10 +13,22 @@
         <li><a href="#">HOME</a></li>
         <li><a [routerLink]="[{outlets: {primary: 'posts'}}]">POST</a></li>
         <li><a [routerLink]="[{outlets: {primary: 'categories'}}]">CATEGORIES</a></li>
-        <li><a href="#">CONTACT</a></li>
+        <li><a (mouseenter)="showNotification = true;">CONTACT</a></li>
     </ul>
+    <ng-template [ngIf]="showNotification">
+        <sc-notification-box [title]="'Any thing, this is just a placeholder'"
+                             [message]="'Any thing, this is just a placeholder'"
+                             [isOkCancelBtn]="false"
+                             (onCloseBtnClick)="onCloseNotificationBox()"
+                             (onOkBtnClick)="onCloseNotificationBox()"
+                             (onCancelBtnClick)="onCloseNotificationBox()"
+        >
+        </sc-notification-box>
+    </ng-template>
     
     <div class="container">
         <app-h-navbar-options></app-h-navbar-options>
     </div>
+
+
 </nav>

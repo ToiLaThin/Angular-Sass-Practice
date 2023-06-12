@@ -1,0 +1,20 @@
+@import '/src/styles/mixins';
+@import '/src/styles/local';
+
+.dropdown {
+    position: relative;
+    z-index: 0; //chung lớp với UI chính để nhận đc hover
+    display: inline-block;
+    &__content {
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 15px;
+        background-color: #f9f9f9;
+        //overflow-x: scroll;
+        min-width: 160px;
+        @include card;
+        @include py-2;
+        @include px-4;
+    }
+} 

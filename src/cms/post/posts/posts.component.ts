@@ -1,5 +1,6 @@
 import { NgStyle } from '@angular/common';
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { ShowDropDownService } from './../../../shared/services/show-drop-down.service';
 
 @Component({
   selector: 'app-posts',
@@ -9,7 +10,7 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 export class PostsComponent{
   
   @ViewChild('colRight', {read: ElementRef, static: true}) colRight!: ElementRef;
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2,private ShowDropDownService: ShowDropDownService) {}
 
   ngAfterViewInit(): void {
     // console.log("From posts component: ", this.colRight.nativeElement);
@@ -24,5 +25,9 @@ export class PostsComponent{
     } else {
       this.renderer.removeClass(this.colRight.nativeElement, 'layer')
     }
+  }
+
+  toggleHNavBarDropDown() {
+    this.ShowDropDownService.toggleHNavBarDropDown();
   }
 }

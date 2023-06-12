@@ -23,6 +23,27 @@
 @mixin card {
     border-radius: 4px;
     box-shadow: 0 0 10px var(--clr-shadow);
+    @content;
+}
+
+@mixin full-screen-layer-shade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    @content; /*z-index ?*/
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0,0,0,.9);
+}
+
+@mixin btn-hover-zoom {
+    transition: all .1s ease-in-out;
+    &:hover {
+        transform: scale(1.3);
+        @content;
+    }
 }
 
 // animation

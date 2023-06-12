@@ -8,6 +8,9 @@ import { InitialCharsPipe } from './pipes/initial-chars.pipe';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { RouterModule } from '@angular/router';
 import { TabsComponent } from './components/tabs/tabs.component';
+import { NotificationBoxComponent } from './components/notification-box/notification-box.component';
+import { DropdownMenuComponent } from './components/dropdown-menu/dropdown-menu.component';
+import { ShowDropDownService } from './services/show-drop-down.service';
 
 
 
@@ -18,7 +21,9 @@ import { TabsComponent } from './components/tabs/tabs.component';
     HtmlToTextPipe,
     InitialCharsPipe,
     BreadcrumbComponent,
-    TabsComponent
+    TabsComponent,
+    NotificationBoxComponent,
+    DropdownMenuComponent,
   ],
   imports: [
     CommonModule,
@@ -29,6 +34,8 @@ import { TabsComponent } from './components/tabs/tabs.component';
     TabsComponent,
     SharedPillBtnComponent,
     BreadcrumbComponent,
+    NotificationBoxComponent,
+    DropdownMenuComponent,
     CommonModule,
     FormMessageComponent,
     FormsModule,

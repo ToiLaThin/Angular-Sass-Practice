@@ -20,24 +20,24 @@ div.shade-layer {
     &__header {
         @include card {background-color: red; color: whitesmoke; }
         @include flex { justify-content: space-between; align-items: center; }
-        padding: 4px 8px;
+        @include px-1; @include py-1;
 
         &__title {
-        i { margin-right: 8px;}
-        margin-top: 1rem;
-        margin-left: 1rem;
+        i { margin-right: var(--m-1); }
+        margin-top: var(--m-1);
+        margin-left: var(--m-1);
         }
 
         &__close-btn {
            position: absolute;
            top: 8px; right: 12px;
-           font-size: 1.5rem;
-           font-weight: 800;
+           font-size: var(--fs-lg);
+           font-weight: var(--fw-bold);
            @include btn-hover-zoom { color: yellow; }
         }
     }
 
-    &__body { padding: 2rem .8rem; }
+    &__body { @include px-1; @include py-1 }
 
     &__footer {
         position: fixed;

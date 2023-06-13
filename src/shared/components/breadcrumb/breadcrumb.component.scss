@@ -1,31 +1,21 @@
+@import '/src/styles/mixins';
 .breadcrumbs {
     background: none;
-    font-size: 0.8em;
+    font-size: inherit;
     margin: 0;
-    a {
-      color: darkgrey;
-    }
-    a:hover {
-      color: dimgrey;
-      text-decoration: none;
-    }
     li {
-      list-style: none;
+      list-style-type: none;
       float: left;
-      margin: 5px;
+      @include mx-1; @include my-1;
     }
-    li:last-child {
-      margin-right: 20px;
-    }
+    li:last-child { margin-right: var(--m-1); }
     li::after {
-      content: "->";
-      color: darkgrey;
+      content: " /";
+      color: var(--clr-shadow);
     }
-    li:last-child::after {
-      content: "";
-    }
+    li:last-child::after { content: ""; }
   }
 
   .active-breadcrumb {
-    color: red !important;
+    color:  var(--clr-primary-red) !important;
   }

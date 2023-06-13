@@ -2,7 +2,7 @@
 :host{
     position: fixed;
     top: 0;
-    background-color: var(--bg-primary);
+    background-color: var(--bg-primary-clr);
     min-width: 100%;
 }
 
@@ -26,15 +26,13 @@
         .logo {
             height: 60px;
             width: auto;
-            margin-top: 5px;
-            margin-left: 8px;
+            min-width: 210px; //nếu chỉ có auto thì khi thu nhở nó sẽ bị co lại xấu
+            @include mx-1; @include my-1;
         }
 
         .hnavbar-options{
             @include flex;
-            .hnavbar-tabs-toggler, .container{
-                display: none;
-            }
+            .hnavbar-tabs-toggler, .container{ display: none; }
         }
 
     }
@@ -46,16 +44,13 @@
             
             a {
                 display: block;
-                padding: 0 1.5rem;
-                color: var(--text-prime);
+                @include px-3;
+                color: var(--text-primary-clr);
+                font-size: var(--fs-lg);
                 cursor: pointer;
-                @include zoom-hover {
-                    color: var(--clr-primary-red);
-                }
 
-                &:focus-within {
-                    color: var(--clr-primary-red);
-                }
+                @include zoom-hover { color: var(--clr-primary-red); }
+                &:focus-within { color: var(--clr-primary-red); }
             }
             
         };
@@ -78,16 +73,12 @@
             .hnavbar-options {
                 .hnavbar-tabs-toggler {
                     display: block;
-                    font-size: 1.5rem;  
-                    padding: 0 1rem;
+                    font-size: var(--fs-md);  
+                    @include py-1;
                     cursor: pointer;
-                    @include zoom-hover {
-                        color: var(--clr-primary-red);
-                    }
+                    @include zoom-hover { color: var(--clr-primary-red); }
                 }
-                .container {
-                    display: block;
-                }
+                .container { display: block; }
             }
         }
 
@@ -99,12 +90,11 @@
                 justify-content: space-between;
             };
             overflow: hidden;
-            li {
-                width: 100%;
-            }
-            a {
+            li { width: 100%; }
+            a { 
                 text-align: center;
-                padding: 20px;
+                @include py-2;
+                @include px-2;
                 transition: translateX 0.2s ease-in-out;
                 &:hover { //override existing hover
                     font-weight: bold;

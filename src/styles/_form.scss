@@ -1,50 +1,50 @@
 @import "mixins";
 
 form {
-    padding: 2rem;
-    border: 1px solid #ccc;
+    @include px-2; @include py-2;
+    border: 1px solid var(--bg-shadow);
     border-radius: 5px;
     @include card;
 }
 
 input {
     width: 280px;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
+    @include px-1; @include py-1;
+    border: 1px solid var(--bg-shadow);
     border-radius: 10px;
-    margin-bottom: 1rem;
+    margin-bottom: var(--m-1);
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
 select {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
+    @include px-1; @include py-1;
+    border: 1px solid var(--bg-shadow);
     border-radius: 2px;
-    margin-bottom: 1rem;
+    margin-bottom: var(--m-1);
 }
 
 textarea {
     width: 280px;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
+    @include px-1; @include py-1;
+    border: 1px solid var(--bg-shadow);
     border-radius: 10px;
-    margin-bottom: 1rem;
+    margin-bottom: var(--m-1);
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
 label {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: medium;
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-md);
     font-weight: bold;
 }
 
 // control co class .ng-valid va co attribute required
 .ng-touched.ng-valid[required] {
-    border: 2px solid #42A948; /* green */
+    border: 2px solid var(--clr-primary-green); 
 }
 
 .ng-touched.ng-invalid:not(form)  {
-    border: 2px solid #a94442; /* red */
+    border: 2px solid var(--clr-primary-red); 
 }
 
 
@@ -70,14 +70,14 @@ label {
 .form-header {
     height: 100px;
     background-color: var(--bg-secondary);
-    margin-bottom: 1rem;
+    margin-bottom: var(--m-1);
     .form-close-btn {
         position: relative;
         top: 12%;
         left: 90%;
         
-        font-size: 2rem;
-        font-weight: bold;
+        font-size: var(--fs-xlg);
+        font-weight: var(--fw-bold);
         color: var(--clr-primary-red);
         &:hover {
             @include zoom-hover;
@@ -99,8 +99,8 @@ label {
     }
 
     button {
-        padding: 0.8rem 1rem;
-        border: 1px solid var(--text-prime);
+        @include px-1; @include py-1;
+        border: 1px solid var(--text-primary-clr);
         border-radius: 4px;
         cursor: pointer;
 

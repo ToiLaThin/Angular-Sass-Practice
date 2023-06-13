@@ -2,7 +2,7 @@
 .row {
     @include flex;
     height: 100%;
-    margin-top: 5rem;
+    margin-top: var(--m-5);
 }
 
 .col-left {

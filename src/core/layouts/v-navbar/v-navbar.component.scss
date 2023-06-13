@@ -7,22 +7,18 @@
     overflow: hidden;
     overflow-y: auto; //enable scrolling
 
-    background-color: var(--bg-primary);
+    background-color: var(--bg-primary-clr);
+    font-size: var(--fs-md);
     @include card;
     
     .vnavbar-container {
-        @include flex {
-            flex-direction: column;
-            justify-content: center;
-        };
+        @include flex { flex-direction: column; justify-content: center; };
 
         .vnavbar-item {
             width: 100%; //max-width why ui like that
             padding: 1.2rem 0;
-            a {
-                color: var(--text-prime);
-                padding: 0 12px;
-            }
+
+            a { @include px-2; color: var(--text-primary-clr); }
 
             .vnavbar-icon {
                 min-width: 2rem;
@@ -38,9 +34,7 @@
                 transform: translateY(-28%) //overflow hidden            
             }
 
-            .vnavbar-link:hover .vnavbar-title{                
-                display: inline-block;
-            }
+            .vnavbar-link:hover .vnavbar-title{ display: inline-block; }
 
             .vnavbar-title {
                 display: none;
@@ -49,45 +43,30 @@
         }
 
         .vnavbar-item:focus-within {
-            .vnavbar-selected {
-                display: block; //
+            .vnavbar-selected { 
+                display: block;
                 background-color: var(--text-prime);
             }
-            .vnavbar-submenu {
-                display: block;
-            }
+            .vnavbar-submenu { display: block; }
         }
 
         .vnavbar-item:hover {
-            background-color: var(--bg-secondary);
-            color: var(--clr-primary-light);
-
-            a {
-                color: var(--clr-primary-light);
-            }
+            background-color: var(--bg-secondary-clr);
+            color: var(--text-secondary-clr);
+            a { color: var(--text-secondary-clr); }
         }
         
         .vnavbar-submenu {
             display: none;
-            margin-top: 12px;
-            margin-left: 10px;
-
-            .submenu-item {
-                padding-top: 8px;
-                padding-bottom: 8px;
-            }
-
-            .submenu-item:hover {
-                transform: scale(1.1);
-                transition: all 0.2s ease-in-out;
-            }
+            margin-top: var(--m-1);
+            margin-left: var(--m-1);
+            .submenu-item { @include py-1; }
+            .submenu-item:hover { @include zoom-hover; }
         }
     }
 
 }
 
-.vnavbar:focus-within {
-    width: 18rem;
-}
+.vnavbar:focus-within { position: absolute; top: 5rem; left: 0; width: 18rem; }
 
 

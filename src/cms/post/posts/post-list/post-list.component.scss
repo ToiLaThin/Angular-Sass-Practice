@@ -13,28 +13,25 @@
     @include flex;
 }
 
-@include mobile-screen { .post-list-container { @include flex { flex-direction: column;
-
-}
-
-li {
-    width: 90%;
-}
-
-}
+@include mobile-screen { 
+    .post-list-container {
+        @include flex { flex-direction: column; }
+        li {
+            width: 90%;
+        }
+    }
 }
 
 .view-type-btn {
-    margin: 0.5rem;
-    padding: 0.8rem 1.2rem;
-
+    margin: var(--m-1);
+    @include py-1; @include px-2;
     cursor: pointer;
 
-    color: var(--text-prime);
-    background-color: var(--bg-secondary);
+    color: var(--text-primary-clr);
+    background-color: var(--bg-secondary-clr);
     &:hover {
-        color: var(--text-prime);
-        background-color: var(--bg-primary);
+        color: var(--text-primary-clr);
+        background-color: var(--bg-primary-clr);
         @include zoom-hover;
     }
 }
@@ -50,17 +47,17 @@ table {
         width: 20vw;
         max-width: 250px;
         height: 20vh;
-        padding: .4rem 0;
+        @include py-1;
     }
     th{
         height: 40px;
         background-color: var(--bg-shadow);
     }
     tr {
-        padding: 0.2rem;
+        padding: var(--p-1);
         cursor: pointer;
-        &:nth-child(even) { background-color: var(--bg-primary); }
-        &:hover { background-color: var(--bg-secondary); color: var(--bg-primary);}
+        &:nth-child(even) { background-color: var(--bg-primary-clr); }
+        &:hover { background-color: var(--bg-secondary-clr); color: var(--bg-primary-clr);}
         .img-td {
             @include flex;
             justify-content: center;

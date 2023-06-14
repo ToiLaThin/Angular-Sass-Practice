@@ -1,16 +1,18 @@
-<app-h-navbar></app-h-navbar>
-<div class="row">
-    <div class="col-left">
-        <app-v-navbar></app-v-navbar>
-    </div>
-    <div class="col-right">
-        <app-main>
-            <app-tabs>
-                <li #tabItems><a routerLink="posts">Posts</a></li>
-                <li #tabItems><a routerLink="categories">Categories</a></li>
-                <li #tabItems><a type="button" (click)="resetLocalStorageAndReload()">Clear lStorage</a></li>
-            </app-tabs>
-            <router-outlet></router-outlet>
-        </app-main>
+<div [class.dark-theme]="(this.isDarkTheme$ | async) === true" [class.light-theme]="(this.isDarkTheme$ |async) === false">
+    <app-h-navbar></app-h-navbar>
+    <div class="row">
+        <div class="col-left">
+            <app-v-navbar></app-v-navbar>
+        </div>
+        <div class="col-right">
+            <app-main>
+                <app-tabs>
+                    <li #tabItems><a routerLink="posts">Posts</a></li>
+                    <li #tabItems><a routerLink="categories">Categories</a></li>
+                    <li #tabItems><a type="button" (click)="resetLocalStorageAndReload()">Clear lStorage</a></li>
+                </app-tabs>
+                <router-outlet></router-outlet>
+            </app-main>
+        </div>
     </div>
 </div>

@@ -11,6 +11,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
 import { NotificationBoxComponent } from './components/notification-box/notification-box.component';
 import { DropdownMenuComponent } from './components/dropdown-menu/dropdown-menu.component';
 import { ShowDropDownService } from './services/show-drop-down.service';
+import { ToggleSwitchComponent } from './components/toggle-switch/toggle-switch.component';
 
 
 
@@ -24,6 +25,7 @@ import { ShowDropDownService } from './services/show-drop-down.service';
     TabsComponent,
     NotificationBoxComponent,
     DropdownMenuComponent,
+    ToggleSwitchComponent,
   ],
   imports: [
     CommonModule,
@@ -36,6 +38,7 @@ import { ShowDropDownService } from './services/show-drop-down.service';
     BreadcrumbComponent,
     NotificationBoxComponent,
     DropdownMenuComponent,
+    ToggleSwitchComponent,
     CommonModule,
     FormMessageComponent,
     FormsModule,

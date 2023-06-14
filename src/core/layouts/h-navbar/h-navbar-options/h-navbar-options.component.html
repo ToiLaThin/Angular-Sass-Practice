@@ -11,6 +11,7 @@
 </a>
 <ng-template [ngIf]="(this.showDropDown$ | async)">
     <app-dropdown-menu>
+        <p><app-toggle-switch (toggle)="toggleTheme()"></app-toggle-switch></p>
         <p><a href="">Hello</a></p>
         <p><a href="">Hello</a></p>
         <p><a href="">Hello</a></p>

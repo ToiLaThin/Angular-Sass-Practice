@@ -56,7 +56,7 @@ table {
     tr {
         padding: var(--p-1);
         cursor: pointer;
-        &:nth-child(even) { background-color: var(--bg-primary-clr); }
+        //&:nth-child(even) { background-color: var(--bg-primary-clr); }
         &:hover { background-color: var(--bg-secondary-clr); color: var(--bg-primary-clr);}
         .img-td {
             @include flex;

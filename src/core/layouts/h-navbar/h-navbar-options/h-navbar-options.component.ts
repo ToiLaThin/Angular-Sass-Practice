@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ShowDropDownService } from 'src/shared/services/show-drop-down.service';
+import { ThemeToggleService } from 'src/shared/services/theme-toggle.service';
 
 @Component({
   selector: 'app-h-navbar-options',
@@ -10,9 +11,8 @@ import { ShowDropDownService } from 'src/shared/services/show-drop-down.service'
 export class HNavbarOptionsComponent implements OnInit {
 
   showDropDown$!: Observable<boolean>;
-  constructor(private showDropDownService: ShowDropDownService) { 
+  constructor(private showDropDownService: ShowDropDownService, private toggleThemeService: ThemeToggleService) { 
      this.showDropDown$ = this.showDropDownService.showHNavBarDropDown$;
-
   }
   ngOnInit(): void {
   }
@@ -20,7 +20,7 @@ export class HNavbarOptionsComponent implements OnInit {
   lightTheme : boolean = true;
 
   toggleTheme() {
-    this.lightTheme = !this.lightTheme;
+    this.toggleThemeService.toggleTheme();
   }
 
   toggleDropDown() {

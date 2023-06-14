@@ -10,7 +10,10 @@
         position: absolute;
         right: 30px;
         top: 15px;
-        background-color: #f9f9f9;
+
+        //ko trong main
+        background-color: var(--bg-primary-clr);
+        color: var(--text-primary-clr);
         //overflow-x: scroll;
         min-width: 160px;
         @include card;

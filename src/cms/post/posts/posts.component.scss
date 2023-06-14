@@ -1,11 +1,7 @@
 .row {
     display: flex;
-    .col-left {
-        width: 100%;
-    }
-    .col-right {
-        width: auto;
-    }
+    .col-left { width: 100%; }
+    .col-right { width: auto; }
 }
 
 // for dynamic styling right col

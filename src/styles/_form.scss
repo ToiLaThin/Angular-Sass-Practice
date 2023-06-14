@@ -2,7 +2,8 @@
 
 form {
     @include px-2; @include py-2;
-    border: 1px solid var(--bg-shadow);
+    border: 2px solid var(--bg-secondary-clr);
+
     border-radius: 5px;
     @include card;
 }
@@ -10,7 +11,7 @@ form {
 input {
     width: 280px;
     @include px-1; @include py-1;
-    border: 1px solid var(--bg-shadow);
+    border: 2px solid var(--bg-secondary-clr);
     border-radius: 10px;
     margin-bottom: var(--m-1);
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
@@ -18,7 +19,7 @@ input {
 
 select {
     @include px-1; @include py-1;
-    border: 1px solid var(--bg-shadow);
+    border: 2px solid var(--bg-secondary-clr);
     border-radius: 2px;
     margin-bottom: var(--m-1);
 }
@@ -26,7 +27,7 @@ select {
 textarea {
     width: 280px;
     @include px-1; @include py-1;
-    border: 1px solid var(--bg-shadow);
+    border: 2px solid var(--bg-secondary-clr);
     border-radius: 10px;
     margin-bottom: var(--m-1);
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);

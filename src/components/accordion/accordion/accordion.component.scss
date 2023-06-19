@@ -1,0 +1,20 @@
+:host {
+    .accordion {
+        //if this is a div not a button no need for width: 100%
+        padding: var(--p-2);
+        background-color: #ddd;
+        color: red;
+        border-radius: 3px;
+
+    }
+    .panel {
+        padding: var(--p-2);
+        margin: auto;
+        text-align: justify;        
+        display: none;
+    }
+    .panel.opened {
+        display: block;
+    }
+    
+}

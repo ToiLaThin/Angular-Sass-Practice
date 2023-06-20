@@ -1,0 +1,39 @@
+:host {
+    background-color: white;
+    font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    .dropdown-container {
+        display: inline-block; //to styling the dropdown content
+        margin: var(--m-2);
+        position: relative;
+        
+        &:hover .dropdown-content { //can nam trong block cha cua ca hai
+            display: block;
+        }
+        .dropdown-btn {
+            color: white;
+            background-color: red;
+            padding: var(--p-2);
+            i {
+                margin-left: var(--m-2);
+                cursor: pointer;
+            }
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: #f1f1f1;
+            position: absolute;
+            width: 100%;//to styling fill the dropdown content
+            text-align: right;//to styling fill the dropdown content
+            right: 0;
+            z-index: 3;
+            
+            a {
+                display: block;
+                padding: 1rem;
+                color: #000 !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+@import '/src/styles/mixins';
+:host {
+    --m-2: 3rem;
+    --p-2: 1.2rem;
+    --bg-primary-clr: rgb(0,0,0,0.8);
+
+    .sidenav-overlay {
+        position: fixed;
+        top: 0; left: 0;
+        z-index: 999;
+        width: 0;
+        height: 100%;
+        color: white;
+        background-color: var(--bg-primary-clr);
+        overflow: hidden; ///
+        transition: all 0.3s ease-in-out;
+
+        .close-btn-container {
+            position: relative; //
+            margin: 2rem 0; //
+            .close-btn {
+                position: absolute; //
+                top: 0; right: 20px;
+                font-size: 2rem;
+                cursor: pointer;//
+                transition: all 0.5s ease-in-out;//
+                &:hover {
+                    color: var(--clr-primary-red);
+                    transform: rotate(180deg);//
+                }
+            }
+        }
+        a {
+            display: block;
+            text-align: center;
+            padding: var(--p-2);
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                background-color: whitesmoke;
+                color: black;
+                transform: translateX(-20px);
+            }
+        }
+    }
+
+    .sidenav-overlay.showed {
+        width: 100%;
+    }
+
+    @include mobile-screen {
+        .sidenav-overlay a {
+            font-size: var(--fs-xlg);
+            padding: var(--p-5);
+        }
+    }
+}   

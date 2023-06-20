@@ -1,20 +1,33 @@
 :host {
+    height: auto;
+    .accordion-container {
+        height: auto;
+    }
     .accordion {
         //if this is a div not a button no need for width: 100%
         padding: var(--p-2);
         background-color: #ddd;
         color: red;
         border-radius: 3px;
-
+        &::after {
+            content: '+';
+            float: right;
+            cursor: pointer;
+        }
     }
     .panel {
-        padding: var(--p-2);
-        margin: auto;
-        text-align: justify;        
-        display: none;
+        text-align: justify;     
+        //no padding or margin
+        //required to hide content
+        overflow: hidden;
+        height: 0;
+        transition: all 0.2s ease-in-out;
     }
     .panel.opened {
-        display: block;
+        margin: var(--m-2);
+        padding: var(--p-2);
+        overflow: visible;
+        height: auto;
     }
     
 }

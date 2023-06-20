@@ -6,6 +6,7 @@ import { HNavbarOptionsComponent } from './layouts/h-navbar/h-navbar-options/h-n
 import { MainComponent } from './layouts/main/main.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/shared/shared.module';
+import { PracticeStylingModule } from 'src/components/practice-styling.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SharedModule } from 'src/shared/shared.module';
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    PracticeStylingModule
   ],
   exports: [
     VNavbarComponent,

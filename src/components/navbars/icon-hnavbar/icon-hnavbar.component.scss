@@ -1,0 +1,39 @@
+@import '/src/styles/mixins';
+@import '/src/styles/resets';
+:host {
+    margin: var(--m-5);
+    .icon-container {
+        margin: var(--m-2);
+        background-color: #ddd;
+        border-radius: 3px;
+
+        a {
+            display: inline-block;
+            padding: var(--p-2);
+            transition: all .2s linear;
+            //center i tags inside a 
+            text-align: center;
+
+            i {
+                font-size: var(--fs-xlg);
+            }
+            &:hover {
+                transform: translate(-2px) scale(1.05);
+                color: red;
+            }
+        }
+    }
+
+    .icon-container.vertical {
+        width: 100px;
+        height: 100%;
+        a {
+            //fill the container when it is block
+            display: block;
+            &:hover {
+                transform: rotate(360deg) scale(1.2);
+                color: red;
+            }
+        }
+    }
+}

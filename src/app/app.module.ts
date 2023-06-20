@@ -7,6 +7,7 @@ import { CoreModule } from 'src/core/core.module';
 import { CmsModule } from 'src/cms/cms.module';
 import { SharedModule } from 'src/shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PracticeStylingModule } from 'src/components/practice-styling.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CoreModule,
     CmsModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,8 +12,10 @@
 <ng-template [ngIf]="(this.showDropDown$ | async)">
     <app-dropdown-menu>
         <p><app-toggle-switch (toggle)="toggleTheme()"></app-toggle-switch></p>
-        <p><a href="">Hello</a></p>
-        <p><a href="">Hello</a></p>
-        <p><a href="">Hello</a></p>
+        <p><a [routerLink]="'icon-hnavbar'">To HIconNav</a></p>
+        <p><a [routerLink]="'accordion'">To Accordion</a></p>
+        <p><a [routerLink]="'sidenavs'">To SideNav</a></p>
+        <p><a [routerLink]="'dropdowns'">To Dropdown</a></p>
+        <p><a [routerLink]="'headers'">To Header</a></p>
     </app-dropdown-menu>
 </ng-template>

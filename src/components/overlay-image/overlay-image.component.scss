@@ -1,0 +1,35 @@
+.container {
+    position: relative;
+    width: 50%;
+    height: fit-content;
+    img { border-radius: 10px;} //img co with 100%
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+
+        background-color: red;
+        border-radius: 10px;
+        padding: 1rem 4rem;
+        z-index: 1;
+
+        opacity: 0;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+
+        &--flex {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+
+
+    cursor: pointer;
+    &:hover .overlay {
+        opacity: 0.8;
+    }
+}

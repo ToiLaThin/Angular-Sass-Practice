@@ -10,6 +10,7 @@ import { DropdownsComponent } from './dropdowns/dropdowns.component';
 import { DropdownHoverComponent } from './dropdowns/dropdown-hover/dropdown-hover.component';
 import { HeadersComponent } from './headers/headers.component';
 import { HeaderResponsiveComponent } from './headers/header-responsive/header-responsive.component';
+import { OverlayImageComponent } from './overlay-image/overlay-image.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
         component: HeaderResponsiveComponent,
       }
     ]
+  },
+  {
+    path: 'overlay-image',
+    component: OverlayImageComponent,
   }
 ]
 
@@ -63,7 +68,8 @@ const routes: Routes = [
     DropdownsComponent,
     DropdownHoverComponent,
     HeadersComponent,
-    HeaderResponsiveComponent
+    HeaderResponsiveComponent,
+    OverlayImageComponent
   ],
   imports: [
     CommonModule,

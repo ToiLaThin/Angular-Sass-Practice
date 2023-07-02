@@ -1,0 +1,23 @@
+@import '/src/styles/mixins';
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 50%;
+    padding: 0 4px;
+    img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+    }
+
+    .blur-img {
+        filter: blur(2px);
+    }
+}
+
+@include mobile-screen {
+    .col { flex: 100%; }
+}

@@ -11,6 +11,10 @@ import { DropdownHoverComponent } from './dropdowns/dropdown-hover/dropdown-hove
 import { HeadersComponent } from './headers/headers.component';
 import { HeaderResponsiveComponent } from './headers/header-responsive/header-responsive.component';
 import { OverlayImageComponent } from './overlay-image/overlay-image.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { ImageRelatedComponent } from './image-related/image-related.component';
+import { ImageGridComponent } from './image-related/image-grid/image-grid.component';
+import { ImageFormComponent } from './image-related/image-form/image-form.component';
 
 const routes: Routes = [
   {
@@ -56,6 +60,23 @@ const routes: Routes = [
   {
     path: 'overlay-image',
     component: OverlayImageComponent,
+  },
+  {
+    path: 'carousel',
+    component: CarouselComponent,
+  },
+  {
+    path: 'image-related',
+    component: ImageRelatedComponent,
+    children: [
+      {
+        path: 'image-grid',
+        component: ImageGridComponent,
+      }, {
+        path: 'image-form',
+        component: ImageFormComponent,
+      }
+    ]
   }
 ]
 
@@ -69,7 +90,11 @@ const routes: Routes = [
     DropdownHoverComponent,
     HeadersComponent,
     HeaderResponsiveComponent,
-    OverlayImageComponent
+    OverlayImageComponent,
+    CarouselComponent,
+    ImageRelatedComponent,
+    ImageGridComponent,
+    ImageFormComponent,
   ],
   imports: [
     CommonModule,

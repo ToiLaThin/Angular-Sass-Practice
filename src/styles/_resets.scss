@@ -50,6 +50,10 @@
     --bg-shade-layer: rgba(0,0,0,.9);
     --text-primary-clr: var(--clr-primary-dark);
     --text-secondary-clr: var(--clr-primary-light);
+
+    --animation-fast: .5s;
+    --animation-medium: 2s;
+    --animation-slow: 3s;
 }
 
 *,

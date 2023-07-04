@@ -15,6 +15,8 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { ImageRelatedComponent } from './image-related/image-related.component';
 import { ImageGridComponent } from './image-related/image-grid/image-grid.component';
 import { ImageFormComponent } from './image-related/image-form/image-form.component';
+import { AnimationRelatedComponent } from './animation-related/animation-related.component';
+import { SpinnerLoaderComponent } from './animation-related/spinner-loader/spinner-loader.component';
 
 const routes: Routes = [
   {
@@ -76,6 +78,16 @@ const routes: Routes = [
         path: 'image-form',
         component: ImageFormComponent,
       }
+    ],
+  },
+  {
+    path: 'animation-related',
+    component: AnimationRelatedComponent,
+    children: [
+      {
+        path: 'spinner-loader',
+        component: SpinnerLoaderComponent,
+      }
     ]
   }
 ]
@@ -95,6 +107,8 @@ const routes: Routes = [
     ImageRelatedComponent,
     ImageGridComponent,
     ImageFormComponent,
+    AnimationRelatedComponent,
+    SpinnerLoaderComponent,
   ],
   imports: [
     CommonModule,

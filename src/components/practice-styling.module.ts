@@ -17,6 +17,7 @@ import { ImageGridComponent } from './image-related/image-grid/image-grid.compon
 import { ImageFormComponent } from './image-related/image-form/image-form.component';
 import { AnimationRelatedComponent } from './animation-related/animation-related.component';
 import { SpinnerLoaderComponent } from './animation-related/spinner-loader/spinner-loader.component';
+import { SideNavFixedComponent } from './navbars/sidenav/side-nav-fixed/side-nav-fixed.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
       {
         path: 'overlay',
         component: SideNavOverlayComponent,
+      },
+      {
+        path: 'fixed',
+        component: SideNavFixedComponent,
       }
     ]
   },
@@ -109,6 +114,7 @@ const routes: Routes = [
     ImageFormComponent,
     AnimationRelatedComponent,
     SpinnerLoaderComponent,
+    SideNavFixedComponent,
   ],
   imports: [
     CommonModule,
